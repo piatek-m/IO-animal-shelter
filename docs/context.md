@@ -23,3 +23,5 @@ Płatności i darowizny, księgowość, integracje z rejestrami zewnętrznymi.
 | Wolontariusz | Osoba pomagająca w schronisku, ograniczone uprawnienia | Podgląd zadań, np. spacery, karmienie |
 | Pracownik schroniska | Osoba zarządzająca zwierzętami i adopcjami | Ewidencja, dokumentacja medyczna, decyzje o adopcji |
 | Administrator | Osoba zarządzająca kontami pracowników, wolontariuszy | Tworzenie i dodawanie kont, zmiany uprawnień |
+| Weterynarz | Osoba badająca zwierzęta | Badanie, szczepienie, chipowanie zwierząt |
+| Timer | Aktor systemowy reprezentujący upływ czasu | Inicjuje wysyłanie przypomnienia o wizycie |
