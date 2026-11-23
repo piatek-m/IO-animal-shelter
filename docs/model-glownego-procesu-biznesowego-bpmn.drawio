@@ -1,0 +1,318 @@
+<mxfile host="app.diagrams.net" agent="draw.io">
+  <diagram id="main-adoption-process" name="Główny proces biznesowy – adopcja">
+    <mxGraphModel dx="2946" dy="1619" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2700" pageHeight="1050" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" value="Proces adopcji zwierzęcia" vertex="1">
+          <mxGeometry height="40" width="1200" x="20" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="pool-adopter" parent="1" style="swimlane;html=1;horizontal=0;startSize=36;fontStyle=1;fontSize=13;fillColor=#e6e6e6;strokeColor=#666666;swimlaneFillColor=#ffffff;" value="Adoptujący" vertex="1">
+          <mxGeometry height="200" width="2580" x="20" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="a-browse" parent="pool-adopter" style="shape=mxgraph.bpmn.task;whiteSpace=wrap;html=1;taskMarker=user;fontSize=11;" value="Przegląda zwierzęta" vertex="1">
+          <mxGeometry height="55" width="120" x="260" y="17" as="geometry" />
+        </mxCell>
+        <mxCell id="a-gw-contact-merge" parent="pool-adopter" style="shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=top;verticalAlign=bottom;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=none;symbol=none;gwType=exclusive;fontSize=10;" value="" vertex="1">
+          <mxGeometry height="50" width="50" x="370" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="af2" edge="1" parent="pool-adopter" source="a-browse" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="a-gw-contact-merge">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a-confirm" parent="pool-adopter" style="shape=mxgraph.bpmn.task;whiteSpace=wrap;html=1;taskMarker=send;fontSize=11;" value="Potwierdza adopcję" vertex="1">
+          <mxGeometry height="70" width="145" x="1520" y="17" as="geometry" />
+        </mxCell>
+        <mxCell id="a-withdraw" parent="pool-adopter" style="shape=mxgraph.bpmn.task;whiteSpace=wrap;html=1;taskMarker=send;fontSize=11;" value="Rezygnuje" vertex="1">
+          <mxGeometry height="55" width="145" x="1440" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="pool-shelter" parent="1" style="swimlane;html=1;horizontal=0;startSize=36;fontStyle=1;fontSize=13;fillColor=#e6e6e6;strokeColor=#666666;swimlaneFillColor=#ffffff;" value="Schronisko" vertex="1">
+          <mxGeometry height="390" width="2594" x="20" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="lane-system" parent="pool-shelter" style="swimlane;html=1;horizontal=0;startSize=36;fontStyle=1;fillColor=#f5f5f5;strokeColor=#666666;swimlaneFillColor=#ffffff;" value="System" vertex="1">
+          <mxGeometry height="180" width="2544" x="36" as="geometry" />
+        </mxCell>
+        <mxCell id="s-remind" parent="lane-system" style="shape=mxgraph.bpmn.task;whiteSpace=wrap;html=1;taskMarker=service;fontSize=11;" value="Wysyła przypomnienie" vertex="1">
+          <mxGeometry height="55" width="135" x="1294" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="s-wait" parent="lane-system" style="shape=mxgraph.bpmn.task;whiteSpace=wrap;html=1;taskMarker=receive;fontSize=11;" value="Oczekuje na termin wizyty" vertex="1">
+          <mxGeometry height="70" width="145" x="1214" as="geometry" />
+        </mxCell>
+        <mxCell id="mf3" edge="1" parent="lane-system" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;dashPattern=8 4;endArrow=open;endFill=0;strokeColor=#6c8ebf;labelBackgroundColor=#ffffff;" value="termin wizyty">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="993.5" y="65" />
+              <mxPoint x="1146.5" y="65" />
+            </Array>
+            <mxPoint x="993.9999999999998" y="225" as="sourcePoint" />
+            <mxPoint x="1146.4999999999998" y="-95" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s-end-success" parent="lane-system" style="shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=terminate2;fontSize=10;" value="Adopcja zakończona" vertex="1">
+          <mxGeometry height="36" width="36" x="2490" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s-register" parent="lane-system" style="shape=mxgraph.bpmn.task;whiteSpace=wrap;html=1;taskMarker=service;fontSize=11;" value="Rejestruje zgłoszenie adopcyjne" vertex="1">
+          <mxGeometry height="70" width="120" x="514" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s-gw-available" parent="lane-system" style="shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=top;verticalAlign=bottom;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=none;symbol=none;gwType=exclusive;fontSize=10;" value="Zwierzę dostępne?" vertex="1">
+          <mxGeometry height="50" width="50" x="564" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="s-unavailable" parent="lane-system" style="shape=mxgraph.bpmn.task;whiteSpace=wrap;html=1;taskMarker=send;fontSize=11;" value="Informuje, że zwierzę jest już zarezerwowane" vertex="1">
+          <mxGeometry height="55" width="150" x="674" y="106" as="geometry" />
+        </mxCell>
+        <mxCell id="s-end-unavailable" parent="lane-system" style="shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=message;fontSize=10;" value="Brak zgłoszenia" vertex="1">
+          <mxGeometry height="36" width="36" x="940" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="s-no-show-timer" parent="lane-system" style="shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=boundInt;symbol=timer;fontSize=9;" value="Brak spotkania" vertex="1">
+          <mxGeometry height="36" width="36" x="1214" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lane-worker" parent="1" style="swimlane;html=1;horizontal=0;startSize=36;fontStyle=1;fillColor=#f5f5f5;strokeColor=#666666;swimlaneFillColor=#ffffff;" value="Pracownik" vertex="1">
+          <mxGeometry height="210" width="2544" x="56" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="w-close" parent="lane-worker" style="shape=mxgraph.bpmn.task;whiteSpace=wrap;html=1;taskMarker=user;fontSize=11;" value="Zamyka zgłoszenie" vertex="1">
+          <mxGeometry height="60" width="145" x="1654" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="w-visit" parent="lane-worker" style="shape=mxgraph.bpmn.task;whiteSpace=wrap;html=1;taskMarker=user;fontSize=11;" value="Prowadzi spotkanie" vertex="1">
+          <mxGeometry height="70" width="155" x="1334" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="w-reject" parent="lane-worker" style="shape=mxgraph.bpmn.task;whiteSpace=wrap;html=1;taskMarker=send;fontSize=11;" value="Odrzuca zgłoszenie" vertex="1">
+          <mxGeometry height="60" width="145" x="864" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="s-end-reject" parent="lane-worker" style="shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=message;fontSize=10;" value="Sprawa zamknięta" vertex="1">
+          <mxGeometry height="36" width="36" x="1124" y="142" as="geometry" />
+        </mxCell>
+        <mxCell id="sf5" edge="1" parent="lane-worker" source="w-reject" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="s-end-reject">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s-end-cancel" parent="lane-worker" style="shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=general;fontSize=10;" value="Rezygnacja" vertex="1">
+          <mxGeometry height="36" width="36" x="1824" y="142" as="geometry" />
+        </mxCell>
+        <mxCell id="sf13" edge="1" parent="lane-worker" source="w-close" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="s-end-cancel">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="w-no-show" parent="lane-worker" style="shape=mxgraph.bpmn.task;whiteSpace=wrap;html=1;taskMarker=user;fontSize=11;" value="Anuluje zgłoszenie i informuje adoptującego" vertex="1">
+          <mxGeometry height="60" width="155" x="1190" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="s-end-no-show" parent="lane-worker" style="shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=timer;fontSize=10;" value="Spotkanie nie odbyło się" vertex="1">
+          <mxGeometry height="36" width="36" x="1404" y="152" as="geometry" />
+        </mxCell>
+        <mxCell id="w-review" parent="lane-worker" style="shape=mxgraph.bpmn.task;whiteSpace=wrap;html=1;taskMarker=user;fontSize=11;" value="Weryfikuje zgłoszenie i dopasowanie adoptującego" vertex="1">
+          <mxGeometry height="70" width="155" x="584" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="a-start" parent="1" style="shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=standard;symbol=general;fontSize=10;" value="Start" vertex="1">
+          <mxGeometry height="36" width="36" x="90" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="a-gw-contact" parent="1" style="shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=top;verticalAlign=bottom;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=none;symbol=none;gwType=exclusive;fontSize=10;" value="Jak szuka zwierzęcia?" vertex="1">
+          <mxGeometry height="50" width="50" x="155" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="a-first-visit" parent="1" style="shape=mxgraph.bpmn.task;whiteSpace=wrap;html=1;taskMarker=user;fontSize=11;" value="Przychodzi do schroniska obejrzeć zwierzęta" vertex="1">
+          <mxGeometry height="55" width="120" x="235" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="a-apply" parent="1" style="shape=mxgraph.bpmn.task;whiteSpace=wrap;html=1;taskMarker=send;fontSize=11;" value="Wysyła zgłoszenie adopcyjne" vertex="1">
+          <mxGeometry height="70" width="155" x="465" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="a-decision" parent="1" style="shape=mxgraph.bpmn.task;whiteSpace=wrap;html=1;taskMarker=receive;fontSize=11;" value="Otrzymuje decyzję" vertex="1">
+          <mxGeometry height="70" width="145" x="875" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="a-gw-accepted" parent="1" style="shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=top;verticalAlign=bottom;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=none;symbol=none;gwType=exclusive;fontSize=10;" value="Zgoda?" vertex="1">
+          <mxGeometry height="50" width="50" x="1060" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="a-end-rejected" parent="1" style="shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=general;fontSize=10;" value="Wniosek odrzucony" vertex="1">
+          <mxGeometry height="36" width="36" x="1070" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="a-visit" parent="1" style="shape=mxgraph.bpmn.task;whiteSpace=wrap;html=1;taskMarker=user;fontSize=11;" value="Przychodzi na spotkanie" vertex="1">
+          <mxGeometry height="70" width="155" x="1170" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="a-gw-wants" parent="1" style="shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=top;verticalAlign=bottom;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=none;symbol=none;gwType=exclusive;fontSize=10;" value="Chce adoptować?" vertex="1">
+          <mxGeometry height="50" width="50" x="1375" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="a-sign" parent="1" style="shape=mxgraph.bpmn.task;whiteSpace=wrap;html=1;taskMarker=user;fontSize=11;" value="Podpisuje umowę i odbiera zwierzę" vertex="1">
+          <mxGeometry height="70" width="155" x="2240" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="a-end-success" parent="1" style="shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=terminate2;fontSize=10;" value="Zwierzę przekazane" vertex="1">
+          <mxGeometry height="36" width="36" x="2450" y="152" as="geometry" />
+        </mxCell>
+        <mxCell id="s-start" parent="1" style="shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=standard;symbol=message;fontSize=10;" value="Zgłoszenie otrzymane" vertex="1">
+          <mxGeometry height="36" width="36" x="510" y="365" as="geometry" />
+        </mxCell>
+        <mxCell id="w-gw" parent="1" style="shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=top;verticalAlign=bottom;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=none;symbol=none;gwType=exclusive;fontSize=10;" value="Akceptacja?" vertex="1">
+          <mxGeometry height="50" width="50" x="900" y="535" as="geometry" />
+        </mxCell>
+        <mxCell id="w-schedule" parent="1" style="shape=mxgraph.bpmn.task;whiteSpace=wrap;html=1;taskMarker=user;fontSize=11;" value="Ustala termin spotkania" vertex="1">
+          <mxGeometry height="70" width="155" x="1020" y="525" as="geometry" />
+        </mxCell>
+        <mxCell id="w-receive" parent="1" style="shape=mxgraph.bpmn.task;whiteSpace=wrap;html=1;taskMarker=receive;fontSize=11;" value="Odbiera decyzję" vertex="1">
+          <mxGeometry height="70" width="145" x="1580" y="525" as="geometry" />
+        </mxCell>
+        <mxCell id="w-gw-confirm" parent="1" style="shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=top;verticalAlign=bottom;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=none;symbol=none;gwType=exclusive;fontSize=10;" value="Adopcja potwierdzona?" vertex="1">
+          <mxGeometry height="50" width="50" x="1765" y="535" as="geometry" />
+        </mxCell>
+        <mxCell id="w-contract" parent="1" style="shape=mxgraph.bpmn.task;whiteSpace=wrap;html=1;taskMarker=user;fontSize=11;" value="Przygotowuje umowę" vertex="1">
+          <mxGeometry height="70" width="155" x="2135" y="525" as="geometry" />
+        </mxCell>
+        <mxCell id="s-update" parent="1" style="shape=mxgraph.bpmn.task;whiteSpace=wrap;html=1;taskMarker=service;fontSize=11;" value="Zmienia status na adoptowane" vertex="1">
+          <mxGeometry height="70" width="165" x="2350" y="345" as="geometry" />
+        </mxCell>
+        <mxCell id="af1" edge="1" parent="1" source="a-start" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="a-gw-contact">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="af1a" edge="1" parent="1" source="a-gw-contact" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;" target="a-browse" value="internet">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="af1b" edge="1" parent="1" source="a-gw-contact" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;" target="a-first-visit" value="w schronisku">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="af2a" edge="1" parent="1" source="a-first-visit" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="a-gw-contact-merge">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="af2b" edge="1" parent="1" source="a-gw-contact-merge" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="a-apply">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="af3" edge="1" parent="1" source="a-apply" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="a-decision">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="650" y="110" />
+              <mxPoint x="840" y="110" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="af4" edge="1" parent="1" source="a-decision" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="a-gw-accepted">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="af5" edge="1" parent="1" source="a-gw-accepted" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;" target="a-end-rejected" value="nie">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="af6" edge="1" parent="1" source="a-gw-accepted" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;" target="a-visit" value="tak">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="af7" edge="1" parent="1" source="a-visit" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="a-gw-wants">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="af8" edge="1" parent="1" source="a-gw-wants" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;" target="a-withdraw" value="nie">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="af9" edge="1" parent="1" source="a-gw-wants" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;" target="a-confirm" value="tak">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="af10" edge="1" parent="1" source="a-confirm" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="a-sign">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1660" y="110" />
+              <mxPoint x="2200" y="110" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="af11" edge="1" parent="1" source="a-sign" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="a-end-success">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sf1" edge="1" parent="1" source="s-start" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="s-register">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sf2" edge="1" parent="1" source="s-register" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="s-gw-available">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sf2a" edge="1" parent="1" source="s-gw-available" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;" target="w-review" value="tak">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sf2b" edge="1" parent="1" source="s-gw-available" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;" target="s-unavailable" value="nie">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sf2c" edge="1" parent="1" source="s-unavailable" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="s-end-unavailable">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sf3" edge="1" parent="1" source="w-review" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="w-gw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sf4" edge="1" parent="1" source="w-gw" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;" target="w-reject" value="nie">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sf6" edge="1" parent="1" source="w-gw" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;" target="w-schedule" value="tak">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sf7" edge="1" parent="1" source="w-schedule" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="s-wait">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sf8" edge="1" parent="1" source="s-wait" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="w-visit">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1510" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sf10" edge="1" parent="1" source="w-visit" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="w-receive">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sf11" edge="1" parent="1" source="w-receive" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="w-gw-confirm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sf12" edge="1" parent="1" source="w-gw-confirm" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;" target="w-close" value="nie">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sf14" edge="1" parent="1" source="w-gw-confirm" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;labelBackgroundColor=#ffffff;" target="w-contract" value="tak">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sf19" edge="1" parent="1" source="w-contract" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="s-update">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sf20" edge="1" parent="1" source="s-update" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="s-end-success">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mf1" edge="1" parent="1" source="a-apply" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;dashPattern=8 4;endArrow=open;endFill=0;strokeColor=#6c8ebf;labelBackgroundColor=#ffffff;" target="s-start" value="zgłoszenie">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="383" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mf2" edge="1" parent="1" source="w-gw" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;dashPattern=8 4;endArrow=open;endFill=0;strokeColor=#6c8ebf;labelBackgroundColor=#ffffff;" target="a-decision" value="decyzja">
+          <mxGeometry relative="1" x="0.0213" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="925" y="530" />
+              <mxPoint x="925" y="530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mf4" edge="1" parent="1" source="s-timer" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;dashPattern=8 4;endArrow=open;endFill=0;strokeColor=#6c8ebf;labelBackgroundColor=#ffffff;" target="a-visit" value="przypomnienie">
+          <mxGeometry relative="1" x="0.0433" y="-6" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1234" y="290" />
+              <mxPoint x="1234" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mf5" edge="1" parent="1" source="a-withdraw" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;dashPattern=8 4;endArrow=open;endFill=0;strokeColor=#b85450;labelBackgroundColor=#ffffff;" target="w-receive" value="rezygnacja">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mf6" edge="1" parent="1" source="a-confirm" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;dashPattern=8 4;endArrow=open;endFill=0;strokeColor=#6c8ebf;labelBackgroundColor=#ffffff;" target="w-receive" value="potwierdzenie">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mf7" edge="1" parent="1" source="w-contract" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;dashPattern=8 4;endArrow=open;endFill=0;strokeColor=#6c8ebf;labelBackgroundColor=#ffffff;" target="a-sign" value="umowa i przekazanie">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s-timer" parent="1" style="shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=boundInt;symbol=timer;fontSize=9;" value="24 h przed wizytą" vertex="1">
+          <mxGeometry height="36" width="36" x="1216" y="424.5" as="geometry" />
+        </mxCell>
+        <mxCell id="sf9" edge="1" parent="1" source="s-timer" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="s-remind">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sf-no-show" edge="1" parent="1" source="s-no-show-timer" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="w-no-show">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sf-no-show-end" edge="1" parent="1" source="w-no-show" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;" target="s-end-no-show">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="coZ8x3w3x9mM2PoR4kBL-1" edge="1" parent="1" source="s-remind" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;dashPattern=8 4;endArrow=open;endFill=0;strokeColor=#6c8ebf;labelBackgroundColor=#ffffff;" target="s-timer" value="">
+          <mxGeometry relative="1" x="0.0746" y="-12" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1230" y="442" />
+            </Array>
+            <mxPoint x="1350" y="442" as="sourcePoint" />
+            <mxPoint x="1230" y="205" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
