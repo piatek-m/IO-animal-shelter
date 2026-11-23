@@ -9,12 +9,6 @@ Zastępuje papierową/rozproszoną ewidencję jednym miejscem, w którym:
 
 ### Poza zakresem
 Płatności i darowizny, księgowość, integracje z rejestrami zewnętrznymi.
-  
-# Lista aktorów:
-- Adoptujący
-- Odwiedzający
-- Wolontariusz
-- Pracownik schroniska
 
 ## Aktorzy
 | Aktor | Opis | Główne interakcje z systemem |
